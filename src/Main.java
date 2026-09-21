@@ -1,15 +1,39 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import model.*;
+import controller.*;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Admin admin = new Admin(
+                "A001",
+                "1234",
+                "Hamid Tahsin",
+                "hamid@gmail.com",
+                "01736762661",
+                User.ADMIN,
+                "System Admin"
+        );
+
+        UserController uc = new UserController();
+        AdminController ac = new AdminController();
+
+        User user = new User(
+                admin.getUserId(),
+                admin.getPassword(),
+                admin.getName(),
+                admin.getEmail(),
+                admin.getContactNo(),
+                admin.getRole()
+        );
+
+        uc.insertUser(user);
+
+        if(admin.getRole() == User.ADMIN)
+        {
+            ac.insertAdmin(admin);
         }
+
+        System.out.println("Admin created successfully.");
     }
 }
