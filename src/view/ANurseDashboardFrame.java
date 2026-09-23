@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -173,8 +172,7 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
 
                 if(user != null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "This User ID is Already Used");
+                    JOptionPane.showMessageDialog(this, "This User ID is Already Used");
                 }
                 else
                 {
@@ -202,11 +200,9 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
                     uc.insertUser(n);
                     nc.insertNurse(n);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Nurse Added Successfully");
+                    JOptionPane.showMessageDialog(this, "Nurse Added Successfully");
 
-                    ANurseDashboardFrame andf =
-                            new ANurseDashboardFrame(this.u);
+                    ANurseDashboardFrame andf = new ANurseDashboardFrame(this.u);
 
                     this.setVisible(false);
                     andf.setVisible(true);
@@ -214,8 +210,7 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
@@ -230,8 +225,7 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
 
                 if(n == null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Nurse Not Found");
+                    JOptionPane.showMessageDialog(this, "Nurse Not Found");
                 }
                 else
                 {
@@ -270,11 +264,9 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
                     nc.updateNurse(n);
                     uc.updateUser(n);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Nurse Updated Successfully");
+                    JOptionPane.showMessageDialog(this, "Nurse Updated Successfully");
 
-                    ANurseDashboardFrame andf =
-                            new ANurseDashboardFrame(this.u);
+                    ANurseDashboardFrame andf = new ANurseDashboardFrame(this.u);
 
                     this.setVisible(false);
                     andf.setVisible(true);
@@ -282,8 +274,7 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Enter Nurse User ID");
+                JOptionPane.showMessageDialog(this, "Please Enter Nurse User ID");
             }
         }
 
@@ -298,19 +289,16 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
 
                 if(n == null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Nurse Not Found");
+                    JOptionPane.showMessageDialog(this, "Nurse Not Found");
                 }
                 else
                 {
                     nc.deleteNurse(userIdTF.getText());
                     uc.deleteUser(userIdTF.getText());
 
-                    JOptionPane.showMessageDialog(this,
-                            "Nurse Deleted Successfully");
+                    JOptionPane.showMessageDialog(this, "Nurse Deleted Successfully");
 
-                    ANurseDashboardFrame andf =
-                            new ANurseDashboardFrame(this.u);
+                    ANurseDashboardFrame andf = new ANurseDashboardFrame(this.u);
 
                     this.setVisible(false);
                     andf.setVisible(true);
@@ -318,8 +306,7 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Enter Nurse User ID");
+                JOptionPane.showMessageDialog(this, "Please Enter Nurse User ID");
             }
         }
 
@@ -344,14 +331,12 @@ public class ANurseDashboardFrame extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Nurse Not Found");
+                    JOptionPane.showMessageDialog(this, "Nurse Not Found");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Enter Nurse User ID");
+                JOptionPane.showMessageDialog(this, "Please Enter Nurse User ID");
             }
         }
 

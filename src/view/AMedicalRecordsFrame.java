@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -81,30 +80,23 @@ public class AMedicalRecordsFrame extends JFrame implements ActionListener
         this.backBtn.addActionListener(this);
         this.panel.add(backBtn);
 
-        MedicalRecordController mrc =
-                new MedicalRecordController();
+        MedicalRecordController mrc = new MedicalRecordController();
 
-        MedicalRecord medicalRecordList[] =
-                mrc.getAllMedicalRecord();
+        MedicalRecord medicalRecordList[] = mrc.getAllMedicalRecord();
 
-        String medicalRecordInfo[][] =
-                new String[medicalRecordList.length][4];
+        String medicalRecordInfo[][] = new String[medicalRecordList.length][4];
 
         for(int i = 0; i < medicalRecordList.length; i++)
         {
             if(medicalRecordList[i] != null)
             {
-                medicalRecordInfo[i][0] =
-                        medicalRecordList[i].getMedicalRecordId();
+                medicalRecordInfo[i][0] = medicalRecordList[i].getMedicalRecordId();
 
-                medicalRecordInfo[i][1] =
-                        medicalRecordList[i].getDoctor().getUserId();
+                medicalRecordInfo[i][1] = medicalRecordList[i].getDoctor().getUserId();
 
-                medicalRecordInfo[i][2] =
-                        medicalRecordList[i].getPatient().getUserId();
+                medicalRecordInfo[i][2] = medicalRecordList[i].getPatient().getUserId();
 
-                medicalRecordInfo[i][3] =
-                        medicalRecordList[i].getDetails();
+                medicalRecordInfo[i][3] = medicalRecordList[i].getDetails();
             }
         }
 
@@ -116,11 +108,9 @@ public class AMedicalRecordsFrame extends JFrame implements ActionListener
                         "Details"
                 };
 
-        this.medicalTable =
-                new JTable(medicalRecordInfo, head);
+        this.medicalTable = new JTable(medicalRecordInfo, head);
 
-        this.medicalTableSP =
-                new JScrollPane(medicalTable);
+        this.medicalTableSP = new JScrollPane(medicalTable);
 
         this.medicalTableSP.setBounds(50, 270, 800, 400);
 
@@ -142,58 +132,43 @@ public class AMedicalRecordsFrame extends JFrame implements ActionListener
                     !patientIdTF.getText().isEmpty() &&
                     !detailsTF.getText().isEmpty())
             {
-                MedicalRecordController mrc =
-                        new MedicalRecordController();
+                MedicalRecordController mrc = new MedicalRecordController();
 
-                MedicalRecord mr =
-                        mrc.searchMedicalRecord(
-                                medicalIdTF.getText());
+                MedicalRecord mr = mrc.searchMedicalRecord(medicalIdTF.getText());
 
                 if(mr != null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "This Medical Record ID is Already Used");
+                    JOptionPane.showMessageDialog(this, "This Medical Record ID is Already Used");
                 }
                 else
                 {
-                    String medicalIdValue =
-                            medicalIdTF.getText();
+                    String medicalIdValue = medicalIdTF.getText();
 
-                    String doctorIdValue =
-                            doctorIdTF.getText();
+                    String doctorIdValue = doctorIdTF.getText();
 
-                    String patientIdValue =
-                            patientIdTF.getText();
+                    String patientIdValue = patientIdTF.getText();
 
-                    String detailsValue =
-                            detailsTF.getText();
+                    String detailsValue = detailsTF.getText();
 
-                    DoctorController dc =
-                            new DoctorController();
+                    DoctorController dc = new DoctorController();
 
-                    PatientController pc =
-                            new PatientController();
+                    PatientController pc = new PatientController();
 
-                    Doctor doctor =
-                            dc.searchDoctor(doctorIdValue);
+                    Doctor doctor = dc.searchDoctor(doctorIdValue);
 
-                    Patient patient =
-                            pc.searchPatient(patientIdValue);
+                    Patient patient = pc.searchPatient(patientIdValue);
 
                     if(doctor == null)
                     {
-                        JOptionPane.showMessageDialog(this,
-                                "Invalid Doctor ID");
+                        JOptionPane.showMessageDialog(this, "Invalid Doctor ID");
                     }
                     else if(patient == null)
                     {
-                        JOptionPane.showMessageDialog(this,
-                                "Invalid Patient ID");
+                        JOptionPane.showMessageDialog(this, "Invalid Patient ID");
                     }
                     else
                     {
-                        MedicalRecord mr1 =
-                                new MedicalRecord(
+                        MedicalRecord mr1 = new MedicalRecord(
                                         medicalIdValue,
                                         doctor,
                                         patient,
@@ -202,11 +177,9 @@ public class AMedicalRecordsFrame extends JFrame implements ActionListener
 
                         mrc.insertMedicalRecord(mr1);
 
-                        JOptionPane.showMessageDialog(this,
-                                "Medical Record Added Successfully");
+                        JOptionPane.showMessageDialog(this, "Medical Record Added Successfully");
 
-                        AMedicalRecordsFrame amrf =
-                                new AMedicalRecordsFrame(this.u);
+                        AMedicalRecordsFrame amrf = new AMedicalRecordsFrame(this.u);
 
                         this.setVisible(false);
                         amrf.setVisible(true);
@@ -215,22 +188,17 @@ public class AMedicalRecordsFrame extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
         else if(command.equals(editBtn.getText()))
         {
-            if(!medicalIdTF.getText().isEmpty() &&
-                    !detailsTF.getText().isEmpty())
+            if(!medicalIdTF.getText().isEmpty() && !detailsTF.getText().isEmpty())
             {
-                MedicalRecordController mrc =
-                        new MedicalRecordController();
+                MedicalRecordController mrc = new MedicalRecordController();
 
-                MedicalRecord mr =
-                        mrc.searchMedicalRecord(
-                                medicalIdTF.getText());
+                MedicalRecord mr = mrc.searchMedicalRecord(medicalIdTF.getText());
 
                 if(mr != null)
                 {
@@ -238,32 +206,27 @@ public class AMedicalRecordsFrame extends JFrame implements ActionListener
 
                     mrc.updateMedicalRecord(mr);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Medical Record Updated Successfully");
+                    JOptionPane.showMessageDialog(this, "Medical Record Updated Successfully");
 
-                    AMedicalRecordsFrame amrf =
-                            new AMedicalRecordsFrame(this.u);
+                    AMedicalRecordsFrame amrf = new AMedicalRecordsFrame(this.u);
 
                     this.setVisible(false);
                     amrf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Medical Record Does Not Exist");
+                    JOptionPane.showMessageDialog(this, "Medical Record Does Not Exist");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Enter Medical Record ID and Details");
+                JOptionPane.showMessageDialog(this, "Please Enter Medical Record ID and Details");
             }
         }
 
         else if(command.equals(backBtn.getText()))
         {
-            AdminHomeFrame ahf =
-                    new AdminHomeFrame(this.u);
+            AdminHomeFrame ahf = new AdminHomeFrame(this.u);
 
             this.setVisible(false);
             ahf.setVisible(true);

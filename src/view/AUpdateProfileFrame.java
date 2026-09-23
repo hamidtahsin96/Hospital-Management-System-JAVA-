@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -103,8 +102,7 @@ public class AUpdateProfileFrame extends JFrame implements ActionListener
 
         if(command.equals(updateBtn.getText()))
         {
-            if(!emailTF.getText().isEmpty() &&
-                    !contactTF.getText().isEmpty())
+            if(!emailTF.getText().isEmpty() && !contactTF.getText().isEmpty())
             {
                 a.setEmail(emailTF.getText());
                 a.setContactNo(contactTF.getText());

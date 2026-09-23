@@ -1,5 +1,4 @@
 package controller;
-import java.lang.*;
 import model.*;
 
 public class NurseController
@@ -20,7 +19,6 @@ public class NurseController
         this.write(nurses);
     }
 
-
     public void updateNurse(Nurse n)
     {
         Nurse nurses[] = this.getAllNurse();
@@ -39,7 +37,6 @@ public class NurseController
 
         this.write(nurses);
     }
-
 
     public void deleteNurse(String userId)
     {
@@ -60,7 +57,6 @@ public class NurseController
         this.write(nurses);
     }
 
-
     public Nurse searchNurse(String userId)
     {
         Nurse nurses[] = this.getAllNurse();
@@ -78,7 +74,6 @@ public class NurseController
 
         return null;
     }
-
 
     public Nurse[] getAllNurse()
     {
@@ -100,7 +95,6 @@ public class NurseController
 
         return nurses;
     }
-
 
     public void write(Nurse nurses[])
     {

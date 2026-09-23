@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -31,8 +30,7 @@ public class AResetPasswordFrame extends JFrame implements ActionListener
         this.panel = new JPanel();
         this.panel.setLayout(null);
 
-        this.currentPasswordLabel =
-                new JLabel("Current Password:");
+        this.currentPasswordLabel = new JLabel("Current Password:");
 
         this.currentPasswordLabel.setBounds(100, 50, 150, 20);
         this.panel.add(currentPasswordLabel);
@@ -41,8 +39,7 @@ public class AResetPasswordFrame extends JFrame implements ActionListener
         this.currentPasswordPF.setBounds(100, 75, 200, 30);
         this.panel.add(currentPasswordPF);
 
-        this.newPasswordLabel =
-                new JLabel("New Password:");
+        this.newPasswordLabel = new JLabel("New Password:");
 
         this.newPasswordLabel.setBounds(100, 115, 150, 20);
         this.panel.add(newPasswordLabel);
@@ -51,8 +48,7 @@ public class AResetPasswordFrame extends JFrame implements ActionListener
         this.newPasswordPF.setBounds(100, 140, 200, 30);
         this.panel.add(newPasswordPF);
 
-        this.retypeNewPasswordLabel =
-                new JLabel("Retype New Password:");
+        this.retypeNewPasswordLabel = new JLabel("Retype New Password:");
 
         this.retypeNewPasswordLabel.setBounds(100, 180, 150, 20);
         this.panel.add(retypeNewPasswordLabel);
@@ -61,8 +57,7 @@ public class AResetPasswordFrame extends JFrame implements ActionListener
         this.retypeNewPasswordPF.setBounds(100, 205, 200, 30);
         this.panel.add(retypeNewPasswordPF);
 
-        this.changePasswordBtn =
-                new JButton("Change Password");
+        this.changePasswordBtn = new JButton("Change Password");
 
         this.changePasswordBtn.setBounds(80, 300, 180, 30);
         this.changePasswordBtn.addActionListener(this);
@@ -82,23 +77,17 @@ public class AResetPasswordFrame extends JFrame implements ActionListener
 
         if(command.equals(changePasswordBtn.getText()))
         {
-            if(!currentPasswordPF.getText().isEmpty() &&
-                    !newPasswordPF.getText().isEmpty() &&
-                    !retypeNewPasswordPF.getText().isEmpty())
+            if(!currentPasswordPF.getText().isEmpty() && !newPasswordPF.getText().isEmpty() && !retypeNewPasswordPF.getText().isEmpty())
             {
-                UserController uc =
-                        new UserController();
+                UserController uc = new UserController();
 
                 if(u1 != null)
                 {
-                    String currentPasswordValue =
-                            currentPasswordPF.getText();
+                    String currentPasswordValue = currentPasswordPF.getText();
 
-                    String newPasswordValue =
-                            newPasswordPF.getText();
+                    String newPasswordValue = newPasswordPF.getText();
 
-                    String retypeNewPasswordValue =
-                            retypeNewPasswordPF.getText();
+                    String retypeNewPasswordValue = retypeNewPasswordPF.getText();
 
                     if(u1.getPassword().equals(currentPasswordValue))
                     {
@@ -117,33 +106,28 @@ public class AResetPasswordFrame extends JFrame implements ActionListener
                         }
                         else
                         {
-                            JOptionPane.showMessageDialog(this,
-                                    "Retype New Password Does Not Match With New Password");
+                            JOptionPane.showMessageDialog(this, "Retype New Password Does Not Match With New Password");
                         }
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(this,
-                                "Current Password is Wrong");
+                        JOptionPane.showMessageDialog(this, "Current Password is Wrong");
                     }
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Admin Does Not Exist");
+                    JOptionPane.showMessageDialog(this, "Admin Does Not Exist");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
         else if(command.equals(backBtn.getText()))
         {
-            AdminHomeFrame ahf =
-                    new AdminHomeFrame(this.u1);
+            AdminHomeFrame ahf = new AdminHomeFrame(this.u1);
 
             this.setVisible(false);
             ahf.setVisible(true);

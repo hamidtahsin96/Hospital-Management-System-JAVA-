@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -85,8 +84,7 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
         String types[] =
                 {
                         "Hospital Manager",
-                        "Medical Supervisor",
-                        "Receptionist"
+                        "Medical Supervisor"
                 };
 
         this.adminTypeCMB = new JComboBox(types);
@@ -183,8 +181,7 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
 
                 if(user != null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "This User ID is Already Used");
+                    JOptionPane.showMessageDialog(this, "This User ID is Already Used");
                 }
                 else
                 {
@@ -196,18 +193,9 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
 
                     int role = User.ADMIN;
 
-                    String adminTypeValue =
-                            adminTypeCMB.getSelectedItem().toString();
+                    String adminTypeValue = adminTypeCMB.getSelectedItem().toString();
 
-                    Admin a = new Admin(
-                            userIdValue,
-                            passwordValue,
-                            nameValue,
-                            emailValue,
-                            contactValue,
-                            role,
-                            adminTypeValue
-                    );
+                    Admin a = new Admin(userIdValue, passwordValue, nameValue, emailValue, contactValue, role, adminTypeValue);
 
                     uc.insertUser(a);
                     ac.insertAdmin(a);
@@ -251,8 +239,7 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
 
                     int role = User.ADMIN;
 
-                    String adminTypeValue =
-                            adminTypeCMB.getSelectedItem().toString();
+                    String adminTypeValue = adminTypeCMB.getSelectedItem().toString();
 
                     a.setName(nameValue);
                     a.setPassword(passwordValue);
@@ -264,25 +251,21 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
                     ac.updateAdmin(a);
                     uc.updateUser(a);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Edit Successfully");
+                    JOptionPane.showMessageDialog(this, "Edit Successfully");
 
-                    AAdminDashboardFrame aadf =
-                            new AAdminDashboardFrame(this.u);
+                    AAdminDashboardFrame aadf = new AAdminDashboardFrame(this.u);
 
                     this.setVisible(false);
                     aadf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Admin Does Not Exist");
+                    JOptionPane.showMessageDialog(this, "Admin Does Not Exist");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
@@ -302,25 +285,21 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
                     uc.deleteUser(userIdValue);
                     ac.deleteAdmin(userIdValue);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Delete Successfully");
+                    JOptionPane.showMessageDialog(this, "Delete Successfully");
 
-                    AAdminDashboardFrame aadf =
-                            new AAdminDashboardFrame(this.u);
+                    AAdminDashboardFrame aadf = new AAdminDashboardFrame(this.u);
 
                     this.setVisible(false);
                     aadf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Provide a Valid ID");
+                    JOptionPane.showMessageDialog(this, "Provide a Valid ID");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide a User ID");
+                JOptionPane.showMessageDialog(this, "Please Provide a User ID");
             }
         }
 
@@ -346,14 +325,12 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Admin Not Found");
+                    JOptionPane.showMessageDialog(this, "Admin Not Found");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide a User ID");
+                JOptionPane.showMessageDialog(this, "Please Provide a User ID");
             }
         }
 
