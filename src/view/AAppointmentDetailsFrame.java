@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -119,23 +118,17 @@ public class AAppointmentDetailsFrame extends JFrame implements ActionListener
         {
             if(appointmentList[i] != null)
             {
-                appointmentInfo[i][0] =
-                        appointmentList[i].getAppointmentId();
+                appointmentInfo[i][0] = appointmentList[i].getAppointmentId();
 
-                appointmentInfo[i][1] =
-                        appointmentList[i].getDoctor().getUserId();
+                appointmentInfo[i][1] = appointmentList[i].getDoctor().getUserId();
 
-                appointmentInfo[i][2] =
-                        appointmentList[i].getPatient().getUserId();
+                appointmentInfo[i][2] = appointmentList[i].getPatient().getUserId();
 
-                appointmentInfo[i][3] =
-                        appointmentList[i].getDate();
+                appointmentInfo[i][3] = appointmentList[i].getDate();
 
-                appointmentInfo[i][4] =
-                        appointmentList[i].getTime();
+                appointmentInfo[i][4] = appointmentList[i].getTime();
 
-                appointmentInfo[i][5] =
-                        appointmentList[i].getStatus();
+                appointmentInfo[i][5] = appointmentList[i].getStatus();
             }
         }
 
@@ -151,8 +144,7 @@ public class AAppointmentDetailsFrame extends JFrame implements ActionListener
 
         this.appointmentTable = new JTable(appointmentInfo, head);
 
-        this.appointmentTableSP =
-                new JScrollPane(appointmentTable);
+        this.appointmentTableSP = new JScrollPane(appointmentTable);
 
         this.appointmentTableSP.setBounds(50, 310, 750, 350);
 
@@ -169,49 +161,40 @@ public class AAppointmentDetailsFrame extends JFrame implements ActionListener
         {
             if(!appointmentIdTF.getText().isEmpty())
             {
-                AppointmentController apc =
-                        new AppointmentController();
+                AppointmentController apc = new AppointmentController();
 
-                Appointment ap =
-                        apc.searchAppointment(
-                                appointmentIdTF.getText());
+                Appointment ap = apc.searchAppointment(appointmentIdTF.getText());
 
                 if(ap != null)
                 {
-                    if(!dateTF.getText().isEmpty() &&
-                            !timeTF.getText().isEmpty())
+                    if(!dateTF.getText().isEmpty() && !timeTF.getText().isEmpty())
                     {
                         ap.setDate(dateTF.getText());
                         ap.setTime(timeTF.getText());
 
                         apc.updateAppointment(ap);
 
-                        JOptionPane.showMessageDialog(this,
-                                "Appointment Rescheduled Successfully");
+                        JOptionPane.showMessageDialog(this, "Appointment Rescheduled Successfully");
 
                         this.setVisible(false);
 
-                        AAppointmentDetailsFrame aadf =
-                                new AAppointmentDetailsFrame(this.u);
+                        AAppointmentDetailsFrame aadf = new AAppointmentDetailsFrame(this.u);
 
                         aadf.setVisible(true);
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(this,
-                                "Please Provide Date and Time");
+                        JOptionPane.showMessageDialog(this, "Please Provide Date and Time");
                     }
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "No Appointment Found");
+                    JOptionPane.showMessageDialog(this, "No Appointment Found");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide Appointment ID");
+                JOptionPane.showMessageDialog(this, "Please Provide Appointment ID");
             }
         }
 
@@ -219,12 +202,9 @@ public class AAppointmentDetailsFrame extends JFrame implements ActionListener
         {
             if(!appointmentIdTF.getText().isEmpty())
             {
-                AppointmentController apc =
-                        new AppointmentController();
+                AppointmentController apc = new AppointmentController();
 
-                Appointment ap =
-                        apc.searchAppointment(
-                                appointmentIdTF.getText());
+                Appointment ap = apc.searchAppointment(appointmentIdTF.getText());
 
                 if(ap != null)
                 {
@@ -232,33 +212,28 @@ public class AAppointmentDetailsFrame extends JFrame implements ActionListener
 
                     apc.updateAppointment(ap);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Appointment Cancelled Successfully");
+                    JOptionPane.showMessageDialog(this, "Appointment Cancelled Successfully");
 
                     this.setVisible(false);
 
-                    AAppointmentDetailsFrame aadf =
-                            new AAppointmentDetailsFrame(this.u);
+                    AAppointmentDetailsFrame aadf = new AAppointmentDetailsFrame(this.u);
 
                     aadf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "No Appointment Found");
+                    JOptionPane.showMessageDialog(this, "No Appointment Found");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide Appointment ID");
+                JOptionPane.showMessageDialog(this, "Please Provide Appointment ID");
             }
         }
 
         else if(command.equals(backBtn.getText()))
         {
-            AdminHomeFrame ahf =
-                    new AdminHomeFrame(this.u);
+            AdminHomeFrame ahf = new AdminHomeFrame(this.u);
 
             this.setVisible(false);
             ahf.setVisible(true);

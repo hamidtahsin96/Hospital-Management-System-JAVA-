@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -31,6 +30,7 @@ public class LoginFrame extends JFrame implements ActionListener
 
         this.userIdTF = new JTextField();
         this.userIdTF.setBounds(100, 75, 150, 30);
+        this.userIdTF.addActionListener(this);
         this.panel.add(userIdTF);
 
         this.passwordLabel = new JLabel("Password:");
@@ -39,6 +39,7 @@ public class LoginFrame extends JFrame implements ActionListener
 
         this.passwordPF = new JPasswordField();
         this.passwordPF.setBounds(100, 140, 150, 30);
+        this.passwordPF.addActionListener(this);
         this.panel.add(passwordPF);
 
         this.loginBtn = new JButton("Login");
@@ -63,10 +64,22 @@ public class LoginFrame extends JFrame implements ActionListener
     {
         String command = ae.getActionCommand();
 
+        if(!userIdTF.getText().isEmpty())
+        {
+            if(ae.getSource() == userIdTF)
+            {
+                this.passwordPF.requestFocus();
+            }
+
+            if(ae.getSource() == passwordPF)
+            {
+                this.loginBtn.doClick();
+            }
+        }
+
         if(command.equals(loginBtn.getText()))
         {
-            if(!userIdTF.getText().isEmpty() &&
-                    !passwordPF.getText().isEmpty())
+            if(!userIdTF.getText().isEmpty() && !passwordPF.getText().isEmpty())
             {
                 String userIdValue = userIdTF.getText();
                 String passwordValue = passwordPF.getText();

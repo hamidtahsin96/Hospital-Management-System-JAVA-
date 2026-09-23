@@ -1,5 +1,4 @@
 package controller;
-import java.lang.*;
 import model.*;
 
 public class PaymentController
@@ -20,7 +19,6 @@ public class PaymentController
         this.write(payments);
     }
 
-
     public void updatePayment(Payment pa)
     {
         Payment payments[] = this.getAllPayment();
@@ -39,7 +37,6 @@ public class PaymentController
 
         this.write(payments);
     }
-
 
     public void deletePayment(String paymentId)
     {
@@ -60,7 +57,6 @@ public class PaymentController
         this.write(payments);
     }
 
-
     public Payment searchPayment(String paymentId)
     {
         Payment payments[] = this.getAllPayment();
@@ -78,7 +74,6 @@ public class PaymentController
 
         return null;
     }
-
 
     public Payment[] searchPaymentByDoctorId(Doctor doctor)
     {
@@ -99,7 +94,6 @@ public class PaymentController
         return targetPayments;
     }
 
-
     public Payment[] searchPaymentByPatientId(Patient patient)
     {
         Payment payments[] = this.getAllPayment();
@@ -118,7 +112,6 @@ public class PaymentController
 
         return targetPayments;
     }
-
 
     public Payment[] getAllPayment()
     {
@@ -140,7 +133,6 @@ public class PaymentController
 
         return payments;
     }
-
 
     public void write(Payment payments[])
     {

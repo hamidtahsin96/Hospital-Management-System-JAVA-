@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -171,8 +170,7 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
 
                 if(user != null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "This User ID is Already Used");
+                    JOptionPane.showMessageDialog(this, "This User ID is Already Used");
                 }
                 else
                 {
@@ -200,11 +198,9 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
                     uc.insertUser(r);
                     rc.insertReceptionist(r);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Receptionist Added Successfully");
+                    JOptionPane.showMessageDialog(this, "Receptionist Added Successfully");
 
-                    AReceptionistDashboardFrame ardf =
-                            new AReceptionistDashboardFrame(this.u);
+                    AReceptionistDashboardFrame ardf = new AReceptionistDashboardFrame(this.u);
 
                     this.setVisible(false);
                     ardf.setVisible(true);
@@ -212,8 +208,7 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
@@ -224,13 +219,11 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
                 ReceptionistController rc = new ReceptionistController();
                 UserController uc = new UserController();
 
-                Receptionist r =
-                        rc.searchReceptionist(userIdTF.getText());
+                Receptionist r = rc.searchReceptionist(userIdTF.getText());
 
                 if(r == null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Receptionist Not Found");
+                    JOptionPane.showMessageDialog(this, "Receptionist Not Found");
                 }
                 else
                 {
@@ -269,11 +262,9 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
                     rc.updateReceptionist(r);
                     uc.updateUser(r);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Receptionist Updated Successfully");
+                    JOptionPane.showMessageDialog(this, "Receptionist Updated Successfully");
 
-                    AReceptionistDashboardFrame ardf =
-                            new AReceptionistDashboardFrame(this.u);
+                    AReceptionistDashboardFrame ardf = new AReceptionistDashboardFrame(this.u);
 
                     this.setVisible(false);
                     ardf.setVisible(true);
@@ -281,8 +272,7 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Enter Receptionist User ID");
+                JOptionPane.showMessageDialog(this, "Please Enter Receptionist User ID");
             }
         }
 
@@ -293,24 +283,20 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
                 ReceptionistController rc = new ReceptionistController();
                 UserController uc = new UserController();
 
-                Receptionist r =
-                        rc.searchReceptionist(userIdTF.getText());
+                Receptionist r = rc.searchReceptionist(userIdTF.getText());
 
                 if(r == null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Receptionist Not Found");
+                    JOptionPane.showMessageDialog(this, "Receptionist Not Found");
                 }
                 else
                 {
                     rc.deleteReceptionist(userIdTF.getText());
                     uc.deleteUser(userIdTF.getText());
 
-                    JOptionPane.showMessageDialog(this,
-                            "Receptionist Deleted Successfully");
+                    JOptionPane.showMessageDialog(this, "Receptionist Deleted Successfully");
 
-                    AReceptionistDashboardFrame ardf =
-                            new AReceptionistDashboardFrame(this.u);
+                    AReceptionistDashboardFrame ardf = new AReceptionistDashboardFrame(this.u);
 
                     this.setVisible(false);
                     ardf.setVisible(true);
@@ -318,8 +304,7 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Enter Receptionist User ID");
+                JOptionPane.showMessageDialog(this, "Please Enter Receptionist User ID");
             }
         }
 
@@ -327,11 +312,9 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
         {
             if(!userIdTF.getText().isEmpty())
             {
-                ReceptionistController rc =
-                        new ReceptionistController();
+                ReceptionistController rc = new ReceptionistController();
 
-                Receptionist r =
-                        rc.searchReceptionist(userIdTF.getText());
+                Receptionist r = rc.searchReceptionist(userIdTF.getText());
 
                 if(r != null)
                 {
@@ -346,14 +329,12 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Receptionist Not Found");
+                    JOptionPane.showMessageDialog(this, "Receptionist Not Found");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Enter Receptionist User ID");
+                JOptionPane.showMessageDialog(this, "Please Enter Receptionist User ID");
             }
         }
 
@@ -372,11 +353,9 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
 
         else if(command.equals(viewAllBtn.getText()))
         {
-            ReceptionistController rc =
-                    new ReceptionistController();
+            ReceptionistController rc = new ReceptionistController();
 
-            Receptionist receptionists[] =
-                    rc.getAllReceptionist();
+            Receptionist receptionists[] = rc.getAllReceptionist();
 
             String data[][] = new String[100][6];
 
@@ -405,14 +384,11 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
 
             this.panel.remove(receptionistTableSP);
 
-            this.receptionistTable =
-                    new JTable(data, column);
+            this.receptionistTable = new JTable(data, column);
 
-            this.receptionistTableSP =
-                    new JScrollPane(receptionistTable);
+            this.receptionistTableSP = new JScrollPane(receptionistTable);
 
-            this.receptionistTableSP.setBounds(
-                    50, 270, 760, 300);
+            this.receptionistTableSP.setBounds(50, 270, 760, 300);
 
             this.panel.add(receptionistTableSP);
 
@@ -422,8 +398,7 @@ public class AReceptionistDashboardFrame extends JFrame implements ActionListene
 
         else if(command.equals(backBtn.getText()))
         {
-            AdminHomeFrame ahf =
-                    new AdminHomeFrame(this.u);
+            AdminHomeFrame ahf = new AdminHomeFrame(this.u);
 
             this.setVisible(false);
             ahf.setVisible(true);

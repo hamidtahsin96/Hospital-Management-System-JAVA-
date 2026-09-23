@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -100,8 +99,7 @@ public class AViewProfileFrame extends JFrame implements ActionListener
 
         if(command.equals(backBtn.getText()))
         {
-            AdminHomeFrame ahf =
-                    new AdminHomeFrame(this.u);
+            AdminHomeFrame ahf = new AdminHomeFrame(this.u);
 
             this.setVisible(false);
             ahf.setVisible(true);

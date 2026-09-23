@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -141,8 +140,7 @@ public class RegistrationFrame extends JFrame implements ActionListener
 
                 if(u != null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "This User ID is Already Used");
+                    JOptionPane.showMessageDialog(this, "This User ID is Already Used");
                 }
                 else
                 {
@@ -173,8 +171,7 @@ public class RegistrationFrame extends JFrame implements ActionListener
                     }
                     catch(Exception e)
                     {
-                        JOptionPane.showMessageDialog(this,
-                                "Age Value should be Integer.");
+                        JOptionPane.showMessageDialog(this, "Age Value should be Integer.");
                         return;
                     }
 
@@ -195,8 +192,7 @@ public class RegistrationFrame extends JFrame implements ActionListener
                     uc.insertUser(p);
                     pc.insertPatient(p);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Registration Successful");
+                    JOptionPane.showMessageDialog(this, "Registration Successful");
 
                     LoginFrame lf = new LoginFrame();
 
@@ -206,8 +202,7 @@ public class RegistrationFrame extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 

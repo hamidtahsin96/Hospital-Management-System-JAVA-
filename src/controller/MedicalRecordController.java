@@ -1,5 +1,4 @@
 package controller;
-import java.lang.*;
 import model.*;
 
 public class MedicalRecordController
@@ -20,7 +19,6 @@ public class MedicalRecordController
         this.write(medicalRecords);
     }
 
-
     public void updateMedicalRecord(MedicalRecord mr)
     {
         MedicalRecord medicalRecords[] = this.getAllMedicalRecord();
@@ -39,7 +37,6 @@ public class MedicalRecordController
 
         this.write(medicalRecords);
     }
-
 
     public void deleteMedicalRecord(String medicalRecordId)
     {
@@ -60,7 +57,6 @@ public class MedicalRecordController
         this.write(medicalRecords);
     }
 
-
     public MedicalRecord searchMedicalRecord(String medicalRecordId)
     {
         MedicalRecord medicalRecords[] = this.getAllMedicalRecord();
@@ -78,7 +74,6 @@ public class MedicalRecordController
 
         return null;
     }
-
 
     public MedicalRecord[] searchMedicalRecordByPatientId(Patient patient)
     {
@@ -98,7 +93,6 @@ public class MedicalRecordController
 
         return targetMedicalRecords;
     }
-
 
     public MedicalRecord[] getAllMedicalRecord()
     {
@@ -120,7 +114,6 @@ public class MedicalRecordController
 
         return medicalRecords;
     }
-
 
     public void write(MedicalRecord medicalRecords[])
     {

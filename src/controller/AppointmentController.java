@@ -1,5 +1,4 @@
 package controller;
-import java.lang.*;
 import model.*;
 
 public class AppointmentController
@@ -20,7 +19,6 @@ public class AppointmentController
         this.write(appointments);
     }
 
-
     public void updateAppointment(Appointment ap)
     {
         Appointment appointments[] = this.getAllAppointment();
@@ -39,7 +37,6 @@ public class AppointmentController
 
         this.write(appointments);
     }
-
 
     public void deleteAppointment(String appointmentId)
     {
@@ -60,7 +57,6 @@ public class AppointmentController
         this.write(appointments);
     }
 
-
     public Appointment searchAppointment(String appointmentId)
     {
         Appointment appointments[] = this.getAllAppointment();
@@ -78,7 +74,6 @@ public class AppointmentController
 
         return null;
     }
-
 
     public Appointment[] searchAppointmentByDoctorId(Doctor doctor)
     {
@@ -99,7 +94,6 @@ public class AppointmentController
         return targetAppointments;
     }
 
-
     public Appointment[] searchAppointmentByPatientId(Patient patient)
     {
         Appointment appointments[] = this.getAllAppointment();
@@ -118,7 +112,6 @@ public class AppointmentController
 
         return targetAppointments;
     }
-
 
     public Appointment[] getAllAppointment()
     {
@@ -140,7 +133,6 @@ public class AppointmentController
 
         return appointments;
     }
-
 
     public void write(Appointment appointments[])
     {

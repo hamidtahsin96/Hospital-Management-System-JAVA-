@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -187,8 +186,7 @@ public class ADoctorDashboardFrame extends JFrame implements ActionListener
 
                 if(user != null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "This User ID is Already Used");
+                    JOptionPane.showMessageDialog(this, "This User ID is Already Used");
                 }
                 else
                 {
@@ -217,11 +215,9 @@ public class ADoctorDashboardFrame extends JFrame implements ActionListener
                     uc.insertUser(d);
                     dc.insertDoctor(d);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Add Successfully");
+                    JOptionPane.showMessageDialog(this, "Add Successfully");
 
-                    ADoctorDashboardFrame adf =
-                            new ADoctorDashboardFrame(this.u);
+                    ADoctorDashboardFrame adf = new ADoctorDashboardFrame(this.u);
 
                     this.setVisible(false);
                     adf.setVisible(true);
@@ -229,8 +225,7 @@ public class ADoctorDashboardFrame extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
@@ -272,25 +267,21 @@ public class ADoctorDashboardFrame extends JFrame implements ActionListener
                     dc.updateDoctor(d);
                     uc.updateUser(d);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Edit Successfully");
+                    JOptionPane.showMessageDialog(this, "Edit Successfully");
 
-                    ADoctorDashboardFrame adf =
-                            new ADoctorDashboardFrame(this.u);
+                    ADoctorDashboardFrame adf = new ADoctorDashboardFrame(this.u);
 
                     this.setVisible(false);
                     adf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Doctor Does Not Exist");
+                    JOptionPane.showMessageDialog(this, "Doctor Does Not Exist");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
@@ -310,25 +301,21 @@ public class ADoctorDashboardFrame extends JFrame implements ActionListener
                     uc.deleteUser(userIdValue);
                     dc.deleteDoctor(userIdValue);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Delete Successfully");
+                    JOptionPane.showMessageDialog(this, "Delete Successfully");
 
-                    ADoctorDashboardFrame adf =
-                            new ADoctorDashboardFrame(this.u);
+                    ADoctorDashboardFrame adf = new ADoctorDashboardFrame(this.u);
 
                     this.setVisible(false);
                     adf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Provide a Valid ID");
+                    JOptionPane.showMessageDialog(this, "Provide a Valid ID");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide a User ID");
+                JOptionPane.showMessageDialog(this, "Please Provide a User ID");
             }
         }
 
@@ -352,14 +339,12 @@ public class ADoctorDashboardFrame extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Doctor Not Found");
+                    JOptionPane.showMessageDialog(this, "Doctor Not Found");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide a User ID");
+                JOptionPane.showMessageDialog(this, "Please Provide a User ID");
             }
         }
 

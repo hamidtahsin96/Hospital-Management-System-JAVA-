@@ -1,6 +1,5 @@
 package view;
 
-import java.lang.*;
 import javax.swing.*;
 import java.awt.event.*;
 import model.*;
@@ -209,8 +208,7 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
 
                 if(user != null)
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "This User ID is Already Used");
+                    JOptionPane.showMessageDialog(this, "This User ID is Already Used");
                 }
                 else
                 {
@@ -241,8 +239,7 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
                     }
                     catch(Exception e)
                     {
-                        JOptionPane.showMessageDialog(this,
-                                "Age Value should be Integer.");
+                        JOptionPane.showMessageDialog(this, "Age Value should be Integer.");
                         return;
                     }
 
@@ -263,11 +260,9 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
                     uc.insertUser(p);
                     pc.insertPatient(p);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Add Successfully");
+                    JOptionPane.showMessageDialog(this, "Add Successfully");
 
-                    APatientDashboardFrame apdf =
-                            new APatientDashboardFrame(this.u);
+                    APatientDashboardFrame apdf = new APatientDashboardFrame(this.u);
 
                     this.setVisible(false);
                     apdf.setVisible(true);
@@ -275,8 +270,7 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
@@ -324,8 +318,7 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
                     }
                     catch(Exception e)
                     {
-                        JOptionPane.showMessageDialog(this,
-                                "Age Value should be Integer.");
+                        JOptionPane.showMessageDialog(this, "Age Value should be Integer.");
                         return;
                     }
 
@@ -343,25 +336,21 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
                     pc.updatePatient(p);
                     uc.updateUser(p);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Edit Successfully");
+                    JOptionPane.showMessageDialog(this, "Edit Successfully");
 
-                    APatientDashboardFrame apdf =
-                            new APatientDashboardFrame(this.u);
+                    APatientDashboardFrame apdf = new APatientDashboardFrame(this.u);
 
                     this.setVisible(false);
                     apdf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Patient Does Not Exist");
+                    JOptionPane.showMessageDialog(this, "Patient Does Not Exist");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Fill Up All The Field Properly");
+                JOptionPane.showMessageDialog(this, "Please Fill Up All The Field Properly");
             }
         }
 
@@ -381,25 +370,21 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
                     uc.deleteUser(userIdValue);
                     pc.deletePatient(userIdValue);
 
-                    JOptionPane.showMessageDialog(this,
-                            "Delete Successfully");
+                    JOptionPane.showMessageDialog(this, "Delete Successfully");
 
-                    APatientDashboardFrame apdf =
-                            new APatientDashboardFrame(this.u);
+                    APatientDashboardFrame apdf = new APatientDashboardFrame(this.u);
 
                     this.setVisible(false);
                     apdf.setVisible(true);
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Provide a Valid ID");
+                    JOptionPane.showMessageDialog(this, "Provide a Valid ID");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide a User ID");
+                JOptionPane.showMessageDialog(this, "Please Provide a User ID");
             }
         }
 
@@ -433,14 +418,12 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(this,
-                            "Patient Not Found");
+                    JOptionPane.showMessageDialog(this, "Patient Not Found");
                 }
             }
             else
             {
-                JOptionPane.showMessageDialog(this,
-                        "Please Provide a User ID");
+                JOptionPane.showMessageDialog(this, "Please Provide a User ID");
             }
         }
 

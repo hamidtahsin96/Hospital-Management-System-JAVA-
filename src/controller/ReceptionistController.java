@@ -1,5 +1,4 @@
 package controller;
-import java.lang.*;
 import model.*;
 
 public class ReceptionistController
@@ -20,7 +19,6 @@ public class ReceptionistController
         this.write(receptionists);
     }
 
-
     public void updateReceptionist(Receptionist r)
     {
         Receptionist receptionists[] = this.getAllReceptionist();
@@ -39,7 +37,6 @@ public class ReceptionistController
 
         this.write(receptionists);
     }
-
 
     public void deleteReceptionist(String userId)
     {
@@ -60,7 +57,6 @@ public class ReceptionistController
         this.write(receptionists);
     }
 
-
     public Receptionist searchReceptionist(String userId)
     {
         Receptionist receptionists[] = this.getAllReceptionist();
@@ -78,7 +74,6 @@ public class ReceptionistController
 
         return null;
     }
-
 
     public Receptionist[] getAllReceptionist()
     {
@@ -100,7 +95,6 @@ public class ReceptionistController
 
         return receptionists;
     }
-
 
     public void write(Receptionist receptionists[])
     {
