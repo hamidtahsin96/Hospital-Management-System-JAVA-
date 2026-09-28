@@ -7,6 +7,7 @@ import controller.*;
 
 public class NurseHomeFrame extends JFrame implements ActionListener
 {
+    private JLabel welcomeLabel;
     private JButton doctorBtn;
     private JButton patientBtn;
     private JButton patientDetailsBtn;
@@ -33,6 +34,10 @@ public class NurseHomeFrame extends JFrame implements ActionListener
 
         this.panel = new JPanel();
         this.panel.setLayout(null);
+
+        this.welcomeLabel = new JLabel("Welcome " + u.getName());
+        this.welcomeLabel.setBounds(300, 5, 250, 30);
+        this.panel.add(welcomeLabel);
 
         this.doctorBtn = new JButton("Doctor List");
         this.doctorBtn.setBounds(50, 50, 300, 30);

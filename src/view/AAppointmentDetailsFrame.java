@@ -114,21 +114,20 @@ public class AAppointmentDetailsFrame extends JFrame implements ActionListener
 
         String appointmentInfo[][] = new String[appointmentList.length][6];
 
+        int row = 0;
+
         for(int i = 0; i < appointmentList.length; i++)
         {
             if(appointmentList[i] != null)
             {
-                appointmentInfo[i][0] = appointmentList[i].getAppointmentId();
+                appointmentInfo[row][0] = appointmentList[i].getAppointmentId();
+                appointmentInfo[row][1] = appointmentList[i].getDoctor().getUserId();
+                appointmentInfo[row][2] = appointmentList[i].getPatient().getUserId();
+                appointmentInfo[row][3] = appointmentList[i].getDate();
+                appointmentInfo[row][4] = appointmentList[i].getTime();
+                appointmentInfo[row][5] = appointmentList[i].getStatus();
 
-                appointmentInfo[i][1] = appointmentList[i].getDoctor().getUserId();
-
-                appointmentInfo[i][2] = appointmentList[i].getPatient().getUserId();
-
-                appointmentInfo[i][3] = appointmentList[i].getDate();
-
-                appointmentInfo[i][4] = appointmentList[i].getTime();
-
-                appointmentInfo[i][5] = appointmentList[i].getStatus();
+                row++;
             }
         }
 

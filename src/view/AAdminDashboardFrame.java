@@ -127,15 +127,19 @@ public class AAdminDashboardFrame extends JFrame implements ActionListener
 
         String adminInfo[][] = new String[adminList.length][5];
 
+        int row = 0;
+
         for(int i = 0; i < adminList.length; i++)
         {
             if(adminList[i] != null)
             {
-                adminInfo[i][0] = adminList[i].getUserId();
-                adminInfo[i][1] = adminList[i].getName();
-                adminInfo[i][2] = adminList[i].getEmail();
-                adminInfo[i][3] = adminList[i].getContactNo();
-                adminInfo[i][4] = adminList[i].getAdminType();
+                adminInfo[row][0] = adminList[i].getUserId();
+                adminInfo[row][1] = adminList[i].getName();
+                adminInfo[row][2] = adminList[i].getEmail();
+                adminInfo[row][3] = adminList[i].getContactNo();
+                adminInfo[row][4] = adminList[i].getAdminType();
+
+                row++;
             }
         }
 

@@ -41,21 +41,20 @@ public class DDoctorListFrame extends JFrame implements ActionListener
 
         String doctorInfo[][] = new String[doctorList.length][6];
 
+        int row = 0;
+
         for(int i = 0; i < doctorList.length; i++)
         {
             if(doctorList[i] != null)
             {
-                doctorInfo[i][0] = doctorList[i].getUserId();
+                doctorInfo[row][0] = doctorList[i].getUserId();
+                doctorInfo[row][1] = doctorList[i].getName();
+                doctorInfo[row][2] = doctorList[i].getEmail();
+                doctorInfo[row][3] = doctorList[i].getContactNo();
+                doctorInfo[row][4] = doctorList[i].getSpecialist();
+                doctorInfo[row][5] = doctorList[i].getEducationalInformation();
 
-                doctorInfo[i][1] = doctorList[i].getName();
-
-                doctorInfo[i][2] = doctorList[i].getEmail();
-
-                doctorInfo[i][3] = doctorList[i].getContactNo();
-
-                doctorInfo[i][4] = doctorList[i].getSpecialist();
-
-                doctorInfo[i][5] = doctorList[i].getEducationalInformation();
+                row++;
             }
         }
 

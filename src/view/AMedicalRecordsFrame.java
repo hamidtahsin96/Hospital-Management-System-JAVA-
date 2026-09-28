@@ -86,17 +86,18 @@ public class AMedicalRecordsFrame extends JFrame implements ActionListener
 
         String medicalRecordInfo[][] = new String[medicalRecordList.length][4];
 
+        int row = 0;
+
         for(int i = 0; i < medicalRecordList.length; i++)
         {
             if(medicalRecordList[i] != null)
             {
-                medicalRecordInfo[i][0] = medicalRecordList[i].getMedicalRecordId();
+                medicalRecordInfo[row][0] = medicalRecordList[i].getMedicalRecordId();
+                medicalRecordInfo[row][1] = medicalRecordList[i].getDoctor().getUserId();
+                medicalRecordInfo[row][2] = medicalRecordList[i].getPatient().getUserId();
+                medicalRecordInfo[row][3] = medicalRecordList[i].getDetails();
 
-                medicalRecordInfo[i][1] = medicalRecordList[i].getDoctor().getUserId();
-
-                medicalRecordInfo[i][2] = medicalRecordList[i].getPatient().getUserId();
-
-                medicalRecordInfo[i][3] = medicalRecordList[i].getDetails();
+                row++;
             }
         }
 
