@@ -8,7 +8,6 @@ import controller.*;
 public class AdminHomeFrame extends JFrame implements ActionListener
 {
     private JLabel welcomeLabel;
-
     private JButton adminDashboardBtn;
     private JButton doctorDashboardBtn;
     private JButton patientDashboardBtn;
@@ -31,7 +30,7 @@ public class AdminHomeFrame extends JFrame implements ActionListener
 
         this.u = u;
 
-        this.setSize(600, 650);
+        this.setSize(800, 650);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
@@ -39,61 +38,61 @@ public class AdminHomeFrame extends JFrame implements ActionListener
         this.panel.setLayout(null);
 
         this.welcomeLabel = new JLabel("Welcome " + u.getName());
-        this.welcomeLabel.setBounds(200, 30, 250, 30);
+        this.welcomeLabel.setBounds(300, 5, 250, 30);
         this.panel.add(welcomeLabel);
 
         this.adminDashboardBtn = new JButton("Admin Dashboard");
-        this.adminDashboardBtn.setBounds(50, 80, 220, 35);
+        this.adminDashboardBtn.setBounds(50, 50, 300, 30);
         this.adminDashboardBtn.addActionListener(this);
         this.panel.add(adminDashboardBtn);
 
         this.doctorDashboardBtn = new JButton("Doctor Dashboard");
-        this.doctorDashboardBtn.setBounds(300, 80, 220, 35);
+        this.doctorDashboardBtn.setBounds(400, 50, 300, 30);
         this.doctorDashboardBtn.addActionListener(this);
         this.panel.add(doctorDashboardBtn);
 
         this.patientDashboardBtn = new JButton("Patient Dashboard");
-        this.patientDashboardBtn.setBounds(50, 130, 220, 35);
+        this.patientDashboardBtn.setBounds(50, 150, 300, 30);
         this.patientDashboardBtn.addActionListener(this);
         this.panel.add(patientDashboardBtn);
 
         this.nurseDashboardBtn = new JButton("Nurse Dashboard");
-        this.nurseDashboardBtn.setBounds(300, 130, 220, 35);
+        this.nurseDashboardBtn.setBounds(400, 150, 300, 30);
         this.nurseDashboardBtn.addActionListener(this);
         this.panel.add(nurseDashboardBtn);
 
         this.receptionistDashboardBtn = new JButton("Receptionist Dashboard");
-        this.receptionistDashboardBtn.setBounds(50, 180, 220, 35);
+        this.receptionistDashboardBtn.setBounds(50, 250, 300, 30);
         this.receptionistDashboardBtn.addActionListener(this);
         this.panel.add(receptionistDashboardBtn);
 
         this.appointmentDetailsBtn = new JButton("Appointment Details");
-        this.appointmentDetailsBtn.setBounds(300, 180, 220, 35);
+        this.appointmentDetailsBtn.setBounds(400, 250, 300, 30);
         this.appointmentDetailsBtn.addActionListener(this);
         this.panel.add(appointmentDetailsBtn);
 
         this.medicalRecordsBtn = new JButton("Medical Records");
-        this.medicalRecordsBtn.setBounds(50, 230, 220, 35);
+        this.medicalRecordsBtn.setBounds(50, 350, 300, 30);
         this.medicalRecordsBtn.addActionListener(this);
         this.panel.add(medicalRecordsBtn);
 
         this.viewProfileBtn = new JButton("View Profile");
-        this.viewProfileBtn.setBounds(300, 230, 220, 35);
+        this.viewProfileBtn.setBounds(400, 350, 300, 30);
         this.viewProfileBtn.addActionListener(this);
         this.panel.add(viewProfileBtn);
 
         this.updateProfileBtn = new JButton("Update Profile");
-        this.updateProfileBtn.setBounds(50, 280, 220, 35);
+        this.updateProfileBtn.setBounds(50, 450, 300, 30);
         this.updateProfileBtn.addActionListener(this);
         this.panel.add(updateProfileBtn);
 
         this.resetPasswordBtn = new JButton("Reset Password");
-        this.resetPasswordBtn.setBounds(300, 280, 220, 35);
+        this.resetPasswordBtn.setBounds(400, 450, 300, 30);
         this.resetPasswordBtn.addActionListener(this);
         this.panel.add(resetPasswordBtn);
 
         this.logOutBtn = new JButton("Log Out");
-        this.logOutBtn.setBounds(200, 350, 180, 35);
+        this.logOutBtn.setBounds(220, 550, 300, 30);
         this.logOutBtn.addActionListener(this);
         this.panel.add(logOutBtn);
 

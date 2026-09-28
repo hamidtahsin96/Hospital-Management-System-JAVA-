@@ -147,17 +147,21 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
 
         String patientInfo[][] = new String[patientList.length][7];
 
+        int row = 0;
+
         for(int i = 0; i < patientList.length; i++)
         {
             if(patientList[i] != null)
             {
-                patientInfo[i][0] = patientList[i].getUserId();
-                patientInfo[i][1] = patientList[i].getName();
-                patientInfo[i][2] = patientList[i].getEmail();
-                patientInfo[i][3] = patientList[i].getContactNo();
-                patientInfo[i][4] = patientList[i].getGender();
-                patientInfo[i][5] = String.valueOf(patientList[i].getAge());
-                patientInfo[i][6] = patientList[i].getAddress();
+                patientInfo[row][0] = patientList[i].getUserId();
+                patientInfo[row][1] = patientList[i].getName();
+                patientInfo[row][2] = patientList[i].getEmail();
+                patientInfo[row][3] = patientList[i].getContactNo();
+                patientInfo[row][4] = patientList[i].getGender();
+                patientInfo[row][5] = String.valueOf(patientList[i].getAge());
+                patientInfo[row][6] = patientList[i].getAddress();
+
+                row++;
             }
         }
 
@@ -439,8 +443,7 @@ public class APatientDashboardFrame extends JFrame implements ActionListener
             ageTF.setText("");
             addressTF.setText("");
 
-            maleRB.setSelected(false);
-            femaleRB.setSelected(false);
+            btg.clearSelection();
         }
 
         if(command.equals(backBtn.getText()))

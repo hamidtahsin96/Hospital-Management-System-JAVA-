@@ -7,6 +7,7 @@ import controller.*;
 
 public class PatientHomeFrame extends JFrame implements ActionListener
 {
+    private JLabel welcomeLabel;
     private JButton doctorBtn, patientBtn;
     private JButton bookAppointmentBtn, appointmentBtn;
     private JButton medicalRecordsBtn, paymentBtn;
@@ -23,12 +24,16 @@ public class PatientHomeFrame extends JFrame implements ActionListener
 
         this.u = u;
 
-        this.setSize(800, 600);
+        this.setSize(800, 650);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
         this.panel = new JPanel();
         this.panel.setLayout(null);
+
+        this.welcomeLabel = new JLabel("Welcome " + u.getName());
+        this.welcomeLabel.setBounds(300, 5, 250, 30);
+        this.panel.add(welcomeLabel);
 
         this.doctorBtn = new JButton("Doctor List");
         this.doctorBtn.setBounds(50, 50, 300, 30);
@@ -41,58 +46,42 @@ public class PatientHomeFrame extends JFrame implements ActionListener
         this.panel.add(patientBtn);
 
         this.bookAppointmentBtn = new JButton("Book Appointment");
-
         this.bookAppointmentBtn.setBounds(50, 150, 300, 30);
-
         this.bookAppointmentBtn.addActionListener(this);
         this.panel.add(bookAppointmentBtn);
 
         this.appointmentBtn = new JButton("Appointment List");
-
         this.appointmentBtn.setBounds(400, 150, 300, 30);
-
         this.appointmentBtn.addActionListener(this);
         this.panel.add(appointmentBtn);
 
         this.medicalRecordsBtn = new JButton("Medical Records");
-
         this.medicalRecordsBtn.setBounds(50, 250, 300, 30);
-
         this.medicalRecordsBtn.addActionListener(this);
         this.panel.add(medicalRecordsBtn);
 
         this.paymentBtn = new JButton("Payment");
-
         this.paymentBtn.setBounds(400, 250, 300, 30);
-
         this.paymentBtn.addActionListener(this);
         this.panel.add(paymentBtn);
 
         this.viewProfileBtn = new JButton("View Profile");
-
         this.viewProfileBtn.setBounds(50, 350, 300, 30);
-
         this.viewProfileBtn.addActionListener(this);
         this.panel.add(viewProfileBtn);
 
         this.updateProfileBtn = new JButton("Update Profile");
-
         this.updateProfileBtn.setBounds(400, 350, 300, 30);
-
         this.updateProfileBtn.addActionListener(this);
         this.panel.add(updateProfileBtn);
 
         this.resetPasswordBtn = new JButton("Reset Password");
-
-        this.resetPasswordBtn.setBounds(220, 420, 300, 30);
-
+        this.resetPasswordBtn.setBounds(220, 450, 300, 30);
         this.resetPasswordBtn.addActionListener(this);
         this.panel.add(resetPasswordBtn);
 
         this.logoutBtn = new JButton("Logout");
-
-        this.logoutBtn.setBounds(220, 480, 300, 30);
-
+        this.logoutBtn.setBounds(220, 550, 300, 30);
         this.logoutBtn.addActionListener(this);
         this.panel.add(logoutBtn);
 

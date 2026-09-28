@@ -1,2 +1,6 @@
-MR001,D001,P001,Dengue Fever
+MR001,D001,P001,Corona Fever
+
+MR003,D002,P002,Dengue Negative
+
+MR002,D001,P002,Corona
 
